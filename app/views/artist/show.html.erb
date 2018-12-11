@@ -1,0 +1,36 @@
+<%= render 'navbar' %>
+<br>
+<div class="container">
+
+    <div class="row">
+
+        <% @artist.albums.each do |album| %>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src=<%=album.image_url %> alt="Foto del Album">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= album.name %>
+                    </h5>
+                    <p class="card-text">
+                        <%= album.released_at.year %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <% end %>
+
+        <div class="col-md-6">
+            <div class="card">
+                <img class="card-img-top" src=<%=@artist.image_url %> alt="Foto del Artista">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= @artist.name %>
+                    </h5>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
